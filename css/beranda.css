@@ -1,0 +1,161 @@
+:root {
+    --backdrop-color: #2f3236;
+    --canvas-color: #02021D;
+    --button-color: #007bff;
+    --navbar-color: #02021D;
+    --text-color: #fff;
+    --header-bg-opacity: rgba(0, 0, 0, 0.25);
+}
+
+body {
+    display: flex;
+    justify-content: center; /* Untuk memastikan elemen ada di tengah layar */
+    background-color: var(--backdrop-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    overflow-y: auto; /* Mengaktifkan scroll vertikal */
+}
+
+.canvas-mobile {
+    position: relative; /* Ubah dari fixed ke relative */
+    max-width: 480px;
+    width: 100%;
+    min-height: 100vh; /* Minimal tinggi layar */
+    background-color: var(--canvas-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Scroll untuk konten panjang */
+    overflow-x: hidden; /* Hilangkan scroll horizontal */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--header-bg-opacity);
+    color: var(--text-color);
+    font-size: 1rem;
+    z-index: 10;
+}
+.greeting, .username {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.68px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    font-variation-settings: 'wdth' 100;
+}
+.content {
+    padding: 8%;
+    padding-top: 70px; /* Ruang untuk header tetap */
+    padding-bottom: 70px; /* Ruang untuk navbar tetap */
+}
+
+.stopwatch-container {
+    text-align: center; /* Menyelaraskan gambar dan teks di tengah */
+    display: flex;
+    flex-direction: column; /* Menyusun gambar dan teks secara vertikal */
+    justify-content: center; /* Memastikan gambar dan teks berada di tengah vertikal */
+    align-items: center; /* Memastikan gambar dan teks berada di tengah horizontal */
+    gap: 10px; /* Memberikan jarak antar elemen gambar dan teks */
+}
+
+.stopwatch-button {
+    cursor: pointer; /* Menunjukkan bahwa gambar dapat diklik */
+    width: 150px;     /* Atur lebar gambar sesuai ukuran yang diinginkan */
+    height: 150px;    /* Atur tinggi gambar sesuai ukuran yang diinginkan */
+    display: block;   /* Pastikan gambar tampil seperti blok */
+    margin: 0;        /* Hapus margin agar elemen sejajar dengan benar */
+    transition: transform 0.2s ease-in-out; /* Efek transisi saat hover */
+}
+
+.stopwatch-button:hover {
+    transform: scale(1.1); /* Membesarkan gambar sedikit saat hover */
+}
+
+.button-text {
+    font-size: 16px;   /* Ukuran font teks */
+    color: #EFEFEF;    /* Warna teks */
+    font-weight: 600;   /* Menebalkan teks */
+}
+
+.result {
+    text-align: center;
+    font-size: 48px;
+    margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+.timestamp {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+.timestamp p {
+    font-size: 16px;
+    color: #EFEFEF;
+    margin: 0;
+}
+
+.timestamp span {
+    display: block;  /* Membuat setiap span tampil di baris terpisah */
+    margin-bottom: 8px;  /* Memberikan jarak antara "Waktu Tidur" dan "Waktu Bangun" */
+}
+
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 480px;
+    width: 100%;
+    background-color: var(--navbar-color);
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-link {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.nav-icon {
+    font-size: 24px;
+    display: block;
+}
+
+/* Scrollbar styling (optional) */
+.canvas-mobile::-webkit-scrollbar {
+    width: 8px;
+}
+
+.canvas-mobile::-webkit-scrollbar-track {
+    background: var(--canvas-color);
+    border-radius: 10px;
+}
+
+.canvas-mobile::-webkit-scrollbar-thumb {
+    background: var(--button-color);
+    border-radius: 10px;
+}
+
+.canvas-mobile::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}

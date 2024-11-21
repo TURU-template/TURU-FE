@@ -8,7 +8,7 @@
     <title>🤤- Beranda</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">      <!-- Library CSS Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">        <!-- Icon Asset -->
-    <link rel="stylesheet" href="css/style.css">        <!-- Style Utama -->
+    <link rel="stylesheet" href="css/beranda.css">        <!-- Style Utama -->
 </head>
 <body>
 
@@ -22,12 +22,25 @@
 
         <!-- CONTENT PAGE -->
         <div class="content">
+            <!-- Username greeting -->
+            <p>
+                <span class="greeting">Selamat malam,</span>
+                <span class="username">Nadin Amizah</span>
+            </p>
             <!-- Stopwatch Button -->
-            <button id="stopwatchBtn" class="stopwatch-button">START</button>
+            <div class="stopwatch-container">
+                <img id="stopwatchBtn" src="icon\Turu.ico" alt="Start Stopwatch" class="stopwatch-button">
+                <p class="button-text">Tombol Tidur</p>
+            </div>
 
             <!-- Result Display -->
-            <div class="result" id="resultDisplay">Elapsed Time: 0 hrs 0 secs</div>
-            <div class="result" id="timestampDisplay">Timestamp: -</div>
+            <div class="result" id="resultDisplay">0 j 0 m</div>
+            <div class="timestamp" id="timestampDisplay">
+                <p>
+                    <span>Waktu Tidur: - </span>
+                    <span>Waktu Bangun: - </span>
+                </p>
+            </div>
         </div>
     
         <!-- Sticky Bottom Navbar -->

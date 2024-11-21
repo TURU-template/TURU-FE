@@ -11,7 +11,7 @@ stopwatchBtn.addEventListener('click', () => {
     if (!isRunning) {
         // START timestamp
         startTime = new Date();
-        timestampDisplay.textContent = `Start: ${startTime.toLocaleTimeString()}`;
+        timestampDisplay.innerHTML = `<span>Waktu Tidur: ${startTime.toLocaleTimeString()}</span>`; // Menggunakan innerHTML agar dapat menambahkan tag <span>
         stopwatchBtn.textContent = "STOP";
     } else {
         // STOP timestamp
@@ -19,10 +19,11 @@ stopwatchBtn.addEventListener('click', () => {
         const elapsedTime = (endTime - startTime) / 1000; // Convert to seconds
         const hours = Math.floor(elapsedTime / 3600);
         const seconds = Math.floor(elapsedTime % 3600);
-        resultDisplay.textContent = `Elapsed Time: ${hours} hrs ${seconds} secs`;
-        timestampDisplay.textContent += ` | Stop: ${endTime.toLocaleTimeString()}`;
+        resultDisplay.textContent = `${hours} j ${seconds} m`;
+
+        // Menambahkan "Waktu Bangun" di bawah "Waktu Tidur"
+        timestampDisplay.innerHTML += `<span>Waktu Bangun: ${endTime.toLocaleTimeString()}</span>`;
         stopwatchBtn.textContent = "START";
     }
     isRunning = !isRunning;
 });
-
